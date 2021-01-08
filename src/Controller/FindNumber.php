@@ -6,10 +6,10 @@ use Symfony\Component\HttpFoundation\Response;
 
 class FindNumber extends AbstractController
 {
-    public function number(): Response
+    public function number(): Response 
     {       
             $INIT = 1;
-            $END = 100000;
+            $END = 100000000;
             if(isset($_POST["numberChoosen"]))
             {
             $media = 0;
@@ -23,23 +23,18 @@ class FindNumber extends AbstractController
                 ]); 
     }
 
-    private function findNumber(int $init, int $end, int $number, int &$media)
+    private function findNumber(int $init, int $end, int $number, int &$media) //función de búsqueda binaria recursiva
     {
             $media = round(($end + $init)/2);
 
             if($number == $media)  
                 return $media;  
 
-            else if ($number == $media-1)
-            {
-                $media--;
-                return $media; 
-            }
             else if($number < $media)
-                $this->findNumber($init, $media, $number,$media);
+                $this->findNumber($init, $media-1, $number,$media);
                         
             else if($number > $media)
-                $this->findNumber($media, $end, $number,$media);
+                $this->findNumber($media+1, $end, $number,$media);
             
     }
 }
