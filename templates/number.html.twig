@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+    </head>
+    <body>
+    <h1>Introduzca un numero entre 1 y 10.000.000.000</h1>
+        <form action="" method="post">
+            Number: <input type="text" name="numberChoosen"><br>
+            <input type="submit" value="send">
+        </form>
+        
+        {% if media is defined %}
+        <h1>El numero es  {{ media }}</h1>
+        {% endif %} 
+    </body>
+</html>

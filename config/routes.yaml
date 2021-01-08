@@ -1,0 +1,10 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+
+number:
+    path: /find/number
+    controller: App\Controller\FindNumber::number
+findNumber:
+    path: /find/number
+    controller: App\Controller\FindNumber::findNumber
