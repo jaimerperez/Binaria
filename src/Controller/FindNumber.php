@@ -10,7 +10,7 @@ class FindNumber extends AbstractController
     {       
             $INIT = 1;
             $END = 100000000;
-            $error = "Introduce un número válido";
+            
             if(isset($_POST["numberChoosen"]))
             {
             $media = 0;
@@ -22,10 +22,12 @@ class FindNumber extends AbstractController
                         'media' => $media,
                         ]); 
                 }
-                else
-                return $this->render('/number.html.twig', [
+                else{
+                    $error = "Introduce un número válido";  
+                    return $this->render('/number.html.twig', [
                     'error' => $error,
                     ]); 
+                }
             }
             return $this->render('/number.html.twig', [
                 ]); 

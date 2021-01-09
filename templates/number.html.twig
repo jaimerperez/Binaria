@@ -14,7 +14,7 @@
         
         {% if media is defined %}
         <h1>El numero es  {{ media }}</h1>
-        {% else %} 
+        {% elseif error is defined %} 
             <h1> {{ error }}</h1>
         {% endif %} 
     </body>
